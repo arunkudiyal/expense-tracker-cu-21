@@ -9,11 +9,11 @@ import AddTransaction from './components/AddTransaction';
 
 function App() {
   const [transactions, setTransactions] = useState([
-    { id: 1011, transactipnTitle: 'Salary', amount: 1000 },
-    { id: 1012, transactipnTitle: 'Trip', amount: -270 },
-    { id: 1013, transactipnTitle: 'Rent', amount: -380 },
-    { id: 1014, transactipnTitle: 'Food', amount: -100 },
-    { id: 1014, transactipnTitle: 'Freelance', amount: +550 }
+    { id: 1011, transactionTitle: 'Salary', amount: 1000 },
+    { id: 1012, transactionTitle: 'Trip', amount: -270 },
+    { id: 1013, transactionTitle: 'Rent', amount: -380 },
+    { id: 1014, transactionTitle: 'Food', amount: -100 },
+    { id: 1014, transactionTitle: 'Freelance', amount: +550 }
   ])
 
   return (
@@ -21,9 +21,9 @@ function App() {
       <Header title="Expense Tracker" />
 
       <div className="container">
-        <Balance />
-        <IncomeExpense />
-        <TransactionList />
+        <Balance transactions={transactions} />
+        <IncomeExpense transactions={transactions} />
+        <TransactionList transactions={transactions} />
         <AddTransaction />
       </div>
     </div>
