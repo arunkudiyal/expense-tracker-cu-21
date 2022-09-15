@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 
-const AddTransaction = () => {
+const AddTransaction = ( {transactions, clicked} ) => {
     const [purpose, setPurpose] = useState('')
     const [amount, setAmount] = useState(0)
 
@@ -16,9 +16,9 @@ const AddTransaction = () => {
             <div className="form-group">
                 <input type="text" placeholder='enter the amount of the transaction...' className='form-control' value={amount} onChange={ (event) => setAmount(event.target.value) } />
             </div>
-
-            <button className='btn btn-success'>Add</button>
         </form>
+
+        <button onClick={ () => clicked( {transactionTitle: purpose, amount: amount} ) } className='btn btn-success'>Add</button>
     </div>
   )
 }

@@ -7,9 +7,9 @@ export const IncomeExpense = ( {transactions} ) => {
 
   transactions.forEach( transaction => {
     if(transaction.amount >= 0) {
-      income += transaction.amount
+      income += parseInt(transaction.amount)
     } else {
-      expense += transaction.amount
+      expense += parseInt(transaction.amount)
     }
   } )
 

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Transaction = ( {amount} ) => {
+const Transaction = ( {amount, clicked} ) => {
     let color = ''
     amount >= 0 ? color = 'green' : color = 'red'
 
@@ -16,7 +16,7 @@ const Transaction = ( {amount} ) => {
   return (
     <div style={transactionStyles}>
         <li style={{ fontSize: '20px' }}>$ {amount} </li>
-        <i className="fa-solid fa-x"></i>
+        <i onClick={clicked} className="fa-solid fa-x"></i>
     </div>
   )
 }

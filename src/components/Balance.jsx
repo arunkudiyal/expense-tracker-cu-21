@@ -3,7 +3,7 @@ import React from 'react'
 const Balance = ( {transactions} ) => {
   let myBalance = 0
 
-  transactions.forEach(transaction => myBalance += transaction.amount)
+  transactions.forEach(transaction => myBalance += parseInt(transaction.amount) )
 
   return (
     <div>
